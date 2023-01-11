@@ -1,6 +1,9 @@
 ---
 name: Linting
 
+on:
+  pull_request:
+
 jobs:
   shellcheck:
     name: shellcheck
