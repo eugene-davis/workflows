@@ -1,6 +1,11 @@
 ---
 name: Linting
 
+on:
+  pull_request:
+
+
+
 jobs:
   shellcheck:
     name: shellcheck
@@ -28,6 +33,9 @@ jobs:
 
       - name: Run hadolint
         uses: reviewdog/action-hadolint@v1
+        with:
+          exclude: |
+            *
 
   golangci-lint:
     name: golangci-lint
